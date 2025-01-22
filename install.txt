@@ -1,0 +1,179 @@
+##################################################
+# npm
+##################################################
+--------------------------------------------------
+1. node 버전 확인
+--------------------------------------------------
+C:\Temp\npm> node -v
+v22.12.0
+
+--------------------------------------------------
+2. npm 버전 확인
+--------------------------------------------------
+C:\Temp\npm> npm -v
+10.9.0
+
+--------------------------------------------------
+3. create-react-app 패키지 설치
+--------------------------------------------------
+C:\Temp\npm> npm install -g create-react-app
+
+--------------------------------------------------
+4. Hello-react 어플리케이션 생성
+--------------------------------------------------
+C:\Temp\npm> create-react-app hello-react
+
+--------------------------------------------------
+5. Hello-react 어플리케이션 재생성(의존성 오류발생시)
+--------------------------------------------------
+C:\Temp\npm> cd hello-react
+C:\Temp\npm\hello-react> npm install --force
+
+--------------------------------------------------
+6. Hello-react 어플리케이션 실행
+--------------------------------------------------
+C:\Temp\npm\hello-react> npm start
+
+##################################################
+# npx
+##################################################
+--------------------------------------------------
+1. node 버전 확인
+--------------------------------------------------
+C:\Temp\npx> node -v
+v22.12.0
+
+--------------------------------------------------
+2. npm 버전 확인
+--------------------------------------------------
+C:\Temp\npx> npm -v
+10.9.0
+
+--------------------------------------------------
+3. Hello-react 어플리케이션 생성
+--------------------------------------------------
+C:\Temp\npx> npx create-react-app hello-react
+
+--------------------------------------------------
+4. Hello-react 어플리케이션 재생성(의존성 오류발생시)
+--------------------------------------------------
+C:\Temp\npx>cd hello-react
+C:\Temp\npx\hello-react>npm install --force
+
+--------------------------------------------------
+6. Hello-react 어플리케이션 실행
+--------------------------------------------------
+C:\Temp\npx\hello-react>npm start
+
+##################################################
+# Vite
+##################################################
+--------------------------------------------------
+1. node 버전 확인
+--------------------------------------------------
+c:\Temp\vite> node -v
+10.9.0
+
+--------------------------------------------------
+2. npm 버전 확인
+--------------------------------------------------
+c:\Temp\vite> npm -v
+v22.12.0
+
+--------------------------------------------------
+3. Hello-react 어플리케이션 생성
+--------------------------------------------------
+c:\Temp\vite> npm create vite@latest
+
+Need to install the following packages:
+create-vite@6.1.1
+Ok to proceed? (y)
+
+> npx
+> create-vite
+
+√ Project name: ... hello-react
+√ Package name: ... hello-react
+√ Select a framework: » React
+√ Select a variant: » JavaScript
+
+Scaffolding project in c:\Temp\vite\Hello-React...
+
+Done. Now run:
+
+  cd hello-react
+  npm install
+  npm run dev
+
+--------------------------------------------------
+4. Hello-react 라이브러리 설치
+--------------------------------------------------
+C:\Temp\vite> cd hello-react
+C:\Temp\vite\hello-react> npm install
+
+--------------------------------------------------
+5. Hello-react 어플리케이션 실행
+--------------------------------------------------
+C:\Temp\vite\hello-react> npm run dev
+> hello-react@0.0.0 dev
+> vite
+
+  VITE v6.0.7  ready in 417 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+##################################################
+# yarn
+##################################################
+--------------------------------------------------
+1. node 버전 확인
+--------------------------------------------------
+C:\Temp\yarn> node -v
+v22.12.0
+
+--------------------------------------------------
+2. npm 버전 확인
+--------------------------------------------------
+C:\Temp\yarn> npm -v
+10.9.0
+
+--------------------------------------------------
+3. yarn 패키지 설치
+--------------------------------------------------
+C:\Temp\yarn> npm install -g yarn
+
+--------------------------------------------------
+4. Hello-react 어플리케이션 생성
+--------------------------------------------------
+C:\Temp\yarn> yarn create react-app hello-react
+
+uccess! Created hello-react at C:\Temp\react-install\yarn\hello-react
+Inside that directory, you can run several commands:
+
+  yarn start
+    Starts the development server.
+
+  yarn build
+    Bundles the app into static files for production.
+
+  yarn test
+    Starts the test runner.
+
+  yarn eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd hello-react
+  yarn start
+
+Happy hacking!
+Done in 105.86s.
+
+--------------------------------------------------
+5. Hello-react 어플리케이션 실행
+--------------------------------------------------
+C:\Temp\yarn\hello-react> yarn start
