@@ -3,6 +3,7 @@ import HelloPropsApp from './HelloPropsApp'
 import HelloEventApp from './HelloEventApp'
 import HelloStateApp from './HelloStateApp'
 import HelloReducerApp from './HelloReducerApp'
+import HelloRefApp from './HelloRefApp'
 import './App.css'
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
 
       <h1>5.reducer: state 로직 통합</h1>
       <HelloReducerApp />
+
+      <h1>6.ref: state 로직 통합</h1>
+      <HelloRefApp />
     </>
   )
 }

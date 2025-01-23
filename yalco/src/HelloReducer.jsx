@@ -1,6 +1,7 @@
 import { useReducer, useState } from "react"
-import { _state, _reducer, _init } from './reducers/ageWarningReducer'
-import extState from './reducers/ageWarningData'
+import { initialState, reducer, initializer } from './reducers/ageWarningReducer'
+import { initialCounter, counterReducer } from './reducers/counterReducer'
+import exteralState from './reducers/ageWarningData'
 
 const SimpleAgeWarning = () => {
 
@@ -50,7 +51,7 @@ const SimpleAgeWarning = () => {
 
 const ReducerAgeWarning = () => {
 
-    const [state, dispatch] = useReducer(_reducer, _state);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <div>
@@ -89,7 +90,7 @@ const ReducerAgeWarning = () => {
 
 const ResetAgeWarning = () => {
 
-    const [state, dispatch] = useReducer(_reducer, extState, _init);
+    const [state, dispatch] = useReducer(reducer, exteralState, initializer);
 
     return (
         <div>
@@ -126,7 +127,7 @@ const ResetAgeWarning = () => {
             <button onClick={(e) => dispatch(
                 {
                     type: 'RESET',
-                    data: extState
+                    state: exteralState
                 }
             )}>
                 Reset
@@ -135,8 +136,33 @@ const ResetAgeWarning = () => {
     )
 }
 
+const ReducerCounter = () => {
+
+    const [state, dispatch] = useReducer(counterReducer, initialCounter);
+
+    const handleClick = (event, cmd, val) => {
+        const { clientX: x, clientY: y } = event;
+        dispatch({
+            cmd,
+            val,
+            pos: {x, y}
+        });
+    }
+
+    return (
+        <>
+            <p>Count: {state.count}</p>
+            <button onClick={(e) => handleClick(e, 'DEC', 2)}>-2</button>
+            <button onClick={(e) => handleClick(e, 'DEC', 1)}>-1</button>
+            <button onClick={(e) => handleClick(e, 'INC', 1)}>+1</button>
+            <button onClick={(e) => handleClick(e, 'INC', 2)}>+2</button>
+        </>
+    )
+}
+
 export {
     SimpleAgeWarning,
     ReducerAgeWarning,
-    ResetAgeWarning
+    ResetAgeWarning,
+    ReducerCounter
 }

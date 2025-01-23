@@ -1,21 +1,20 @@
-export const _state = {
+export const initialState = {
     name: '',
     year: '',
     warning: ''
 }
 
-export function _reducer(state, action) {
+export function reducer(state, action) {
+    console.log("reducer", state);
+
     const type = action.type;
     const value = action.value;
-    const data = action.data;
 
     if(type === 'SET_NAME') {
-        const newState = {
+        return {
             ...state,
             name: value.trim().toUpperCase()
-        }
-
-        return newState;
+        };
     } else if(type === 'SET_YEAR') {
         let message = '';
         let age = new Date().getFullYear() - value;
@@ -25,28 +24,22 @@ export function _reducer(state, action) {
             message = 'Ok Ok';
         }
 
-        const newState = {
+        return {
             ...state,
             year: value,
             warning: message
-        }
-
-        return newState;
+        };
     } else if(type === 'RESET') {
-        const newState = _init(data);
-
-        return newState;
+        return initializer(action.state);
     } else {
         throw new Error('Unknown action type');
     }
 }
 
-export function _init(state) {
-    const newState = {
-        ..._state,
+export function initializer(state) {
+    return {
+        ...initialState,
         name: state.name,
         year: state.year
-    }
-
-    return newState;
+    };
 }

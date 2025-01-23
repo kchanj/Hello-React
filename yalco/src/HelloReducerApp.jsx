@@ -1,7 +1,8 @@
 import {
     SimpleAgeWarning,
     ReducerAgeWarning,
-    ResetAgeWarning
+    ResetAgeWarning,
+    ReducerCounter
 } from './HelloReducer'
 
 function HelloReducerApp() {
@@ -15,6 +16,9 @@ function HelloReducerApp() {
 
             <h2>Reset 성인 경고 메시지</h2>
             <ResetAgeWarning />
+
+            <h2>Reducer Counter</h2>
+            <ReducerCounter />
         </>
     )
 }
