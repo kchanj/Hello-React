@@ -4,6 +4,7 @@ import HelloEventApp from './HelloEventApp'
 import HelloStateApp from './HelloStateApp'
 import HelloReducerApp from './HelloReducerApp'
 import HelloRefApp from './HelloRefApp'
+import HelloLifecycleApp from './HelloLifecycleApp'
 import './App.css'
 
 function App() {
@@ -21,11 +22,14 @@ function App() {
       <h1>4.state: 컴포넌트의 정보를 저장</h1>
       <HelloStateApp />
 
-      <h1>5.reducer: state 로직 통합</h1>
+      <h1>5.Reducer</h1>
       <HelloReducerApp />
 
-      <h1>6.ref: state 로직 통합</h1>
+      <h1>6.Ref</h1>
       <HelloRefApp />
+
+      <h1>7.Lifecycle</h1>
+      <HelloLifecycleApp />
     </>
   )
 }
