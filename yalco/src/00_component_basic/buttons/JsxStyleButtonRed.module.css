@@ -1,3 +1,7 @@
+.button {
+    color: red;
+}
+
 .card {
     width: 300px;
     margin: 12px auto;
@@ -5,14 +9,4 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-  
-.card h2 {
-    margin: 0 0 8px;
-    font-size: 1.33rem;
-    color: #333;
-}
-  
-.card p {
-    margin: 2px 0;
 }
