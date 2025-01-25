@@ -16,29 +16,35 @@ const InputEvent = () => {
 }
 
 const FocusInputText = () => (
-    <input type="text"
-           onFocus={() => console.log('Focus')}
-           onBlur={() => console.log('Blur')}
-           placeholder="Focus Event" />
+    <div className={styles.card}>
+        <input type="text"
+            onFocus={() => console.log('Focus')}
+            onBlur={() => console.log('Blur')}
+            placeholder="Focus Event" />
+    </div>
 )
 
 const ChangeInputText = () => (
-    <input type="text"
-           onChange={(e) => console.log(e.target.value)}
-           placeholder="Change Event" />
+    <div className={styles.card}>
+        <input type="text"
+            onChange={(e) => console.log(e.target.value)}
+            placeholder="Change Event" />
+    </div>
 )
 
 const KeybordInputText = () => (
-    <input type="text"
-           onKeyDown={(e) => {
-                    console.log(e.key, 'Key Down');
-                    if(e.key === 'Enter' && e.shiftKey) {
-                        console.log('Shift + Enter Down')
+    <div className={styles.card}>
+        <input type="text"
+            onKeyDown={(e) => {
+                        console.log(e.key, 'Key Down');
+                        if(e.key === 'Enter' && e.shiftKey) {
+                            console.log('Shift + Enter Down')
+                        }
                     }
-                }
-           }
-           onKeyUp={(e) => console.log(e.key, 'Key Up')}
-           placeholder="Keyboard Event" />
+            }
+            onKeyUp={(e) => console.log(e.key, 'Key Up')}
+            placeholder="Keyboard Event" />
+    </div>
 )
 
 export { InputEvent }
