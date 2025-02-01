@@ -1,12 +1,14 @@
-import { Component, useEffect, useState } from "react";
+import { Component, useEffect, useState } from 'react';
+import styles from '../../Card.module.css'
 
-const CompLifecycle = () => {
+const HelloLifecycle = () => {
 
     const comps = ['None', 'ClassComp', 'FuncComp'];
     const [current, setCurrent] = useState('None');
 
     return (
-        <>
+        <div className={styles.card}>
+            <h2>Hello Lifecycle</h2>
             {comps.map((comp) => (
                     <label key={comp}>
                         <input type="radio"
@@ -17,13 +19,13 @@ const CompLifecycle = () => {
                     </label>
                 )
             )}
-            <br/>
+            <hr/>
             {current === 'None'
                 ? 'None'
                 : (current === 'ClassComp'
                         ? <ClassComp/>
                         : <FuncComp/>) }
-        </>
+        </div>
     )
 }
 
@@ -89,71 +91,4 @@ const FuncComp = () => {
     )
 }
 
-const CounterLifecycle = () => {
-
-    const [count1, setCount1] = useState(0);
-    const [count2, setCount2] = useState(0);
-
-    const handleClick = (setter) => {
-        setter(prev => prev + 1);
-    }
-
-    useEffect(() => {
-        console.log(`count1: ${count1}, count2: ${count2}`)
-    }, [count1]);
-
-    return (
-        <div>
-            <h3>Count1: {count1}</h3>
-            <button onClick={(e) => handleClick(setCount1)}>Count1 ++</button>
-
-            <h3>Count2: {count2}</h3>
-            <button onClick={(e) => handleClick(setCount2)}>Count2 ++</button>
-        </div>
-    )
-}
-
-const BookSearch = () => {
-    const [books, setBooks] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchBooks = async() => {
-            try {
-                const response = await fetch('/HelloLifecycleBook.json');
-                const books = await response.json();
-                setBooks(books);
-            } catch(error) {
-                console.error('Failed to fetch books:', error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchBooks();
-    }, []);
-
-    if(loading) {
-        return <p>Loading...</p>
-    }
-
-    return (
-        <div>
-            <h3>Book List</h3>
-            <ul>
-                {books.map(book => (
-                    <li key={book.id}>
-                        <strong>{book.title}</strong>
-                        by {book.author}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-}
-
-export {
-    CompLifecycle,
-    CounterLifecycle,
-    BookSearch
- }
+export { HelloLifecycle }

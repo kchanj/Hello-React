@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from 'react';
+import styles from '../../Card.module.css'
 
 const SimpleCounter = () => {
 
@@ -15,14 +16,14 @@ const SimpleCounter = () => {
     }
 
     return (
-        <>
-            <h3>Counter</h3>
+        <div className={styles.card}>
+            <h2>Simple Counter</h2>
             <p>Counter1: {count1.current}</p>
             <p>Counter2: {count2}</p>
             <br/>
             <button onClick={doCount1}>Counter1 ++</button>
             <button onClick={doCount2}>Counter2 ++</button>
-        </>
+        </div>
     )
 }
 
@@ -42,38 +43,15 @@ const StateCounter = () => {
     }
 
     return (
-        <>
-            <h3>Counter</h3>
+        <div className={styles.card}>
+            <h2>State Counter</h2>
             <p>Counter1: {count1}</p>
             <p>Counter2: {count2}</p>
             <br/>
             <button onClick={doCount1}>Counter1 ++</button>
             <button onClick={doCount2}>Counter2 ++</button>
-        </>
-    )
-}
-
-const TextBox = () => {
-
-    const inputRef = useRef(null);
-
-    const handleClick = () => {
-        console.log("inputRef", inputRef.current);
-        inputRef.current.focus();
-    }
-
-    return (
-        <div>
-            <input type="text"
-                   placeholder="Type..."
-                   ref={inputRef} />
-            <button onClick={handleClick}>Focus</button>
         </div>
     )
 }
 
-export {
-    SimpleCounter,
-    StateCounter,
-    TextBox
-}
+export { SimpleCounter, StateCounter }
