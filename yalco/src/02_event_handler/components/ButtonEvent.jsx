@@ -30,7 +30,7 @@ const SimpleClickButton = () => {
             <button onClick={handleClick}>
                 Simple Click Button 1
             </button>
-            <button onClick={() => {console.log('이벤트 핸들러: 클릭 기본', `Click Event 2`)}}>
+            <button onClick={() => {console.log('이벤트 핸들러: 클릭', `Click Event 2`)}}>
                 Simple Click Button 2
             </button>
         </div>
@@ -40,13 +40,13 @@ const SimpleClickButton = () => {
 /** 이벤트 핸들러: onClick */
 const MessageClickButton = ({message}) => {
 
-    function handleClick() {
-        console.log('이벤트 핸들러: 클릭', message);
+    function handleClick(event) {
+        console.log('이벤트 핸들러: 클릭', event);
     }
 
     return (
         <div className={styles.card}>
-            <button onClick={handleClick}>
+            <button onClick={(e) => handleClick(e)}>
                 {message} Click Button
             </button>
         </div>
