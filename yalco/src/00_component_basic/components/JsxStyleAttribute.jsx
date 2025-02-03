@@ -6,7 +6,7 @@ const JsxStyleAttribute = () => {
             <h2>JSX 스타일: 기본</h2>
             <SimpleStyle />
 
-            <h2>JSX 스타일: 객체</h2>
+            <h2>JSX 스타일: 객체, 전개구분</h2>
             <ObjectStyle />
 
             <h2>JSX 스타일: 동적</h2>
@@ -15,10 +15,10 @@ const JsxStyleAttribute = () => {
     )
 }
 
+/** JSX 스타일: 기본 */
 const SimpleStyle = () => {
     return (
         <div className={styles.card}>
-            <h2>기본 스타일</h2>
             <span style={
                 {
                     fontWeight: "bold",  // font-weight
@@ -29,11 +29,13 @@ const SimpleStyle = () => {
     )
 }
 
+/** JSX 스타일: 객체, 전개구분 */
 function ObjectStyle() {
 
     const style1 = {
+        textAlign: "center",
         backgroundColor: "lightblue",
-        margin: "12px",
+        margin: "5px",
         padding: "20px",
         borderRadius: "8px"
     }
@@ -49,13 +51,13 @@ function ObjectStyle() {
             <div style={style2}>DIV 2</div>
             <div style={{
                 ...style2,
-                backgroundColor: "lightgreen",
-                color: "darkblue"
+                backgroundColor: "lightgreen"
             }}>DIV 3</div>
         </div>
     )
 }
 
+/** JSX 스타일: 동적 */
 const DynamicStyle = () => {
 
     const styleA = {

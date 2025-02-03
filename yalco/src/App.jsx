@@ -12,32 +12,32 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>00. Component Basic</h1>
-      <ComponentBasicApp />
+      {/* <h1>00. Component Basic</h1>
+      <ComponentBasicApp /> */}
 
-      <h1>01. Component Props</h1>
-      <ComponentPropsApp />
+      {/* <h1>01. Component Props</h1>
+      <ComponentPropsApp /> */}
 
       <h1>02. Event Handler</h1>
       <EventHandlerApp />
 
-      <h1>03. State Basic</h1>
-      <StateBasicApp />
+      {/* <h1>03. State Basic</h1>
+      <StateBasicApp /> */}
 
-      <h1>04. State Utilize</h1>
-      <StateUtilizeApp />
+      {/* <h1>04. State Utilize</h1>
+      <StateUtilizeApp /> */}
 
-      <h1>05. Reducer Basic</h1>
-      <ReducerBasicApp />
+      {/* <h1>05. Reducer Basic</h1>
+      <ReducerBasicApp /> */}
 
-      <h1>06. Ref Basic</h1>
-      <RefBasicApp />
+      {/* <h1>06. Ref Basic</h1>
+      <RefBasicApp /> */}
 
-      <h1>07. Effect Basic</h1>
-      <EffectBasicApp />
+      {/* <h1>07. Effect Basic</h1>
+      <EffectBasicApp /> */}
 
-      <h1>08. Custom Hook</h1>
-      <CustomHookApp />
+      {/* <h1>08. Custom Hook</h1>
+      <CustomHookApp /> */}
     </>
   )
 }

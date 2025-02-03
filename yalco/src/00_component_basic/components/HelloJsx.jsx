@@ -3,7 +3,7 @@ import styles from '../../Card.module.css'
 const HelloJsx = () => {
     return (
         <>
-            <h2>JSX 표현식: 기본</h2>
+            <h2>JSX 표현식: 문자, 숫자, 논리</h2>
             <JsxBasic />
 
             <h2>JSX 표현식: 배열, 객체</h2>
@@ -18,6 +18,7 @@ const HelloJsx = () => {
     )
 }
 
+/** JSX 표현식: 문자, 숫자, 논리 */
 const JsxBasic = () => {
 
     const name = "John";
@@ -26,16 +27,17 @@ const JsxBasic = () => {
 
     return (
         <div className={styles.card}>
-            <p>Name: {name}</p> {/* 문자 */}
-            <p>Age: {age + 1}</p> {/* 숫자 */}
-            <p>Admin: {isAdmin}</p> {/* 논리 */}
-            <p>Admin: {String(isAdmin)}</p> {/* 문자 */}
+            <p>문자: {name}</p>
+            <p>숫자: {age + 1}</p>
+            <p>논리: {isAdmin}</p>
+            <p>논리(변환): {String(isAdmin)}</p>
             <p>{name +"'s Profile"}</p>
-            <p>{`${name} is ${age} years old`}</p>
+            <p>Template literal: {`${name} is ${age} years old`}</p>
         </div>
     )
 }
 
+/** JSX 표현식: 배열, 객체 */
 const JxsArray = () => {
 
     const colors = ["red", "blue", "green"];
@@ -49,6 +51,7 @@ const JxsArray = () => {
     return (
         <div className={styles.card}>
             <p>User: {user.name}, {user.age}</p>
+
             <p>Color 1st: {colors[0]}</p>
             <p>Color count: {colors.length}</p>
 
@@ -59,27 +62,28 @@ const JxsArray = () => {
     )
 }
 
+/** JSX 표현식: 함수 */
 const JsxFunction = () => {
 
     const items = [{id: 1, price: 10}, {id: 2, price: 20}, {id: 3, price: 30}];
-    const getGreeting = (name) => `Hello ${name}`;
+    const getHello = (name) => `Hello ${name}`;
     const getDate = (date) => {
         return new Date(date).toLocaleDateString();
     }
-    const sumTotal = (items) => {
+    const getTotal = (items) => {
         return items.reduce((sum, item) => sum + item.price, 0);
     }
 
     return (
         <div className={styles.card}>
-            <p>{getGreeting("Alice")}</p>
-            <p>Today: {getDate(new Date())}</p>
-            <p>Total: {sumTotal(items)}</p>
-            <p>
+            <p>문자 반환: {getHello("Alice")}</p>
+            <p>문자 반환: {getDate(new Date())}</p>
+            <p>숫자 반환: {getTotal(items)}</p>
+            <p>익명 함수:
                 {
                     (() => {
                         const hours = new Date().getHours();
-                        return hours < 12 ? "Good morning" : "Good afternoon"; 
+                        return hours < 12 ? " Good morning" : " Good afternoon"; 
                     })()
                 }
             </p>
@@ -87,6 +91,7 @@ const JsxFunction = () => {
     )
 }
 
+/** JSX 표현식: jsx element */
 const jsxElement1 = <p>Hello JSX</p>
 const jsxElement2 = (
     <ul>
@@ -96,8 +101,8 @@ const jsxElement2 = (
     </ul>
 )
 
-console.log(jsxElement1);
-console.log(jsxElement2);
+console.log("JSX 표현식: jsx element", jsxElement1);
+console.log("JSX 표현식: jsx element", jsxElement2);
 
 function JsxElement() {
     return (

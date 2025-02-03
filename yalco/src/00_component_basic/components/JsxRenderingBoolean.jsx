@@ -1,16 +1,13 @@
 import styles from '../../Card.module.css'
 
-const isLogged = true;
-const userRole = "admin";
-
 const JsxRenderingBoolean = () => {
     return (
         <>
             <h2>JSX 랜더링: 3항 연산자</h2>
-            { TernaryOperator(isLogged) }
+            { TernaryOperator() }
 
             <h2>JSX 랜더링: 3항 연산자 이중</h2>
-            { DualTernaryOperator(userRole) }
+            { DualTernaryOperator() }
 
             <h2>JSX 랜더링: Null 병합 연산자</h2>
             <NullishOperator />
@@ -18,10 +15,14 @@ const JsxRenderingBoolean = () => {
     )
 }
 
-const TernaryOperator = (isLogged) => {
+/** JSX 랜더링: 3항 연산자 */
+const TernaryOperator = () => {
+    
+    const isLogged = true;
+
     return (
         <div className={styles.card}>
-            {isLogged ? <h2>Hello</h2> : <h2>Sign in</h2>}
+            {isLogged ? <h3>Hello</h3> : <h3>Sign in</h3>}
             {isLogged ? (
                     <>
                         <p>Welcome back</p>
@@ -38,26 +39,27 @@ const TernaryOperator = (isLogged) => {
     )
 }
 
-const DualTernaryOperator = (userRole) => {
+/** JSX 랜더링: 3항 연산자 이중 */
+const DualTernaryOperator = () => {
+
+    const userRole = "admin";
+
     return (
         <div className={styles.card}>
         {userRole === "admin" ? (
                 <>
-                    <h2>Admin</h2>
-                    <p>Admin Dashboard</p>
+                    <h3>Admin Dashboard</h3>
                     <button>Manage Users</button>
                 </>
             ) : userRole === "member" ? (
                 <>
-                    <h2>Member</h2>
-                    <p>Admin Dashboard</p>
-                    <button>Create Article</button>
+                    <h3>Member Home</h3>
+                    <p>Welcome to the community!</p>
                 </>
             ) : (
                 <>
-                    <h2>Guest</h2>
-                    <p>Admin Dashboard</p>
-                    <button>Sign up here</button>
+                    <h3>Guest Access</h3>
+                    <a href="/signup">Sign up here</a>
                 </>
             )
         }
@@ -65,6 +67,7 @@ const DualTernaryOperator = (userRole) => {
     )
 }
 
+/** JSX 랜더링: Null 병합 연산자 */
 const NullishOperator = () => {
 
     const hasNews = true;    // true, false
@@ -73,9 +76,9 @@ const NullishOperator = () => {
     return (
         <div className={styles.card}>
             {hasNews && <p>You have new messages!</p>}
-            <p>Message: {message && <strong>{message}</strong>}</p>   {/* a && b : a == true, b 출력 */}
-            <p>Message: {message || <strong>Message is Null, Undefined, Empty</strong>}</p> {/* a || b : a == true, a 출력 */}
-            <p>Message: {message ?? <strong>Message is Null, Undefined</strong>}</p>        {/* a ?? b : a == true, a 출력 */}
+            <p>&& 연산자: {message && <strong>{message}</strong>}</p>                         {/* a && b : a == true, b 출력, 아니면 공백 */}
+            <p>|| 연산자: {message || <strong>Message is Null, Undefined, Empty</strong>}</p> {/* a || b : a == true, a 출력, 아니면 b */}
+            <p>?? 연산자: {message ?? <strong>Message is Null, Undefined</strong>}</p>        {/* a ?? b : a == true, a 출력, 아니면 b */}
         </div>
     )
 }

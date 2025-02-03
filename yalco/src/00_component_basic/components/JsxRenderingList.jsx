@@ -3,15 +3,16 @@ import styles from '../../Card.module.css'
 const JsxRenderingList = () => {
     return (
         <>
-            <h2>JSX 랜더링: 배열</h2>
+            <h2>JSX 랜더링: 배열 기본</h2>
             <ArrayObject />
 
-            <h2>JSX 랜더링: List</h2>
+            <h2>JSX 랜더링: 배열 응용</h2>
             <ListObject />
         </>
     )
 }
 
+/** JSX 랜더링: 배열 기본 */
 const ArrayObject = () => {
 
     const fruits = ["Apple", "Banana", "Cherry"];
@@ -19,22 +20,26 @@ const ArrayObject = () => {
 
     return (
         <div className={styles.card}>
-            <h2>Array Rendering</h2>
-            <p>Simple: {[0, 123, "A", "Hello", true, false]}</p> {/* 배열의 경우 랜더링 가능한 요소만 출력됨 */}
-            <p>Fruits: {fruits}</p>
+            <h3>Array Rendering</h3>
+            <p>배열의 요소: {[0, 123, "A", "Hello", true, false]}</p> {/* 랜더링 가능한 요소만 출력됨 */}
+            <p>배열의 요소: {fruits}</p>
+            <p>배열의 요소(map):</p>
             <ul>
                 {fruits.map((fruit, index) => <li key={index}>{fruit}</li>)}
             </ul>
-            <p>Buttons: {buttons.map((button, index) => <span key={index}>{button}</span>)}</p>
+            <p>배열의 요소(map):
+                {buttons.map((button, index) => <span key={index}>{button}</span>)}
+            </p>
         </div>
     )
 }
 
+/** JSX 랜더링: 배열 응용 */
 const ListObject = () => {
     const books = [
-        {id: 1, title: "React Basics", published: true, publisher: "Manning"},
+        {id: 1, title: "React Basics",   published: true,  publisher: "Manning"},
         {id: 2, title: "Advanced Hooks", published: false, publisher: "OReilly"},
-        {id: 3, title: "JSX in Depth", published: true, publisher: "Packt"}
+        {id: 3, title: "JSX in Depth",   published: true,  publisher: "Packt"}
     ];
 
     const publisheds = books.filter(book => book.published);

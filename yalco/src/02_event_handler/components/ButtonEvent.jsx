@@ -3,23 +3,26 @@ import styles from '../../Card.module.css'
 const ButtonEvent = () => {
     return (
         <>
-            <h2>Click Event</h2>
+            <h2>이벤트 핸들러: onClick</h2>
             <SimpleClickButton />
+
+            <h2>이벤트 핸들러: onClick</h2>
             <MessageClickButton message="Hello" />
 
-            <h2>Mouse Event</h2>
+            <h2>이벤트 핸들러: 마우스</h2>
             <MouseEventButton />
 
-            <h2>Event Object</h2>
+            <h2>이벤트 핸들러: event 객체</h2>
             <EventObjectButton />
         </>
     )
 }
 
+/** 이벤트 핸들러: onClick */
 const SimpleClickButton = () => {
 
     function handleClick() {
-        console.log(`Click Event 1`);
+        console.log('이벤트 핸들러: 클릭', `Click Event 1`);
     }
 
     return (
@@ -27,17 +30,18 @@ const SimpleClickButton = () => {
             <button onClick={handleClick}>
                 Simple Click Button 1
             </button>
-            <button onClick={() => {console.log(`Click Event 2`)}}>
+            <button onClick={() => {console.log('이벤트 핸들러: 클릭 기본', `Click Event 2`)}}>
                 Simple Click Button 2
             </button>
         </div>
     )
 }
 
+/** 이벤트 핸들러: onClick */
 const MessageClickButton = ({message}) => {
 
     function handleClick() {
-        console.log(message);
+        console.log('이벤트 핸들러: 클릭', message);
     }
 
     return (
@@ -49,10 +53,11 @@ const MessageClickButton = ({message}) => {
     )
 }
 
+/** 이벤트 핸들러: 마우스 */
 const MouseEventButton = () => {
 
     const handleEvent = (which) => {
-        console.log(which);
+        console.log('이벤트 핸들러: 마우스', which);
     }
 
     return (
@@ -67,14 +72,15 @@ const MouseEventButton = () => {
     )
 }
 
+/** 이벤트 핸들러: event 객체 */
 const EventObjectButton = () => {
 
     const handleEvent = (event) => {
-        console.log("event", event);
-        console.log("event.target", event.target);
-        console.log("event.clientX", event.clientX);
-        console.log("event.clientY", event.clientY);
-        console.log("event.shiftKey", event.shiftKey);
+        console.log("이벤트 핸들러: event 객체", event);
+        console.log("이벤트 핸들러: event 객체 target", event.target);
+        console.log("이벤트 핸들러: event 객체 clientX", event.clientX);
+        console.log("이벤트 핸들러: event 객체 clientY", event.clientY);
+        console.log("이벤트 핸들러: event 객체 shiftKey", event.shiftKey);
     }
 
     return (

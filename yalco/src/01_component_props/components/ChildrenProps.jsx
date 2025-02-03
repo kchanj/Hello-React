@@ -3,7 +3,7 @@ import styles from '../../Card.module.css'
 const ChildrenProps = () => {
     return (
         <>
-            <h2>컴포넌트의 Props 전달: children</h2>
+            <h2>컴포넌트의 Props 인자: children</h2>
             <ChildrenPropsBook
                 title="Props in React"
                 content="Props pass data from one component to another"
@@ -20,11 +20,12 @@ const ChildrenProps = () => {
     )
 }
 
+/** 컴포넌트의 Props 인자: children */
 const ChildrenPropsBook = ({title, content, author, children}) => {
-    console.log("ChildrenPropsBook", children);
+    console.log("컴포넌트의 Props 인자: children", children);
     return (
         <div className={styles.card}>
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             <p>{content}</p>
             <p>Author: {author}</p>
             <div>
