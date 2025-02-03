@@ -27,6 +27,12 @@
   font-size: 0.92em;
 }
 
+#root select {
+  margin: 8px 0;
+  padding: 4px;
+  font-size: 0.92em;
+}
+
 .user-profile,
 .temp-input,
 .unit-selector {

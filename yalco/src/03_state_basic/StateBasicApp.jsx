@@ -1,11 +1,11 @@
 import { HelloState } from './components/HelloState'
-import { TodoListManager } from './components/TodoListManager'
+import { HelloStateTodo } from './components/HelloStateTodo'
 
 const StateBasicApp = () => {
     return (
         <>
             <HelloState />
-            <TodoListManager />
+            <HelloStateTodo />
         </>
     )
 }

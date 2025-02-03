@@ -6,20 +6,22 @@ const TempConverter = () => {
     const [temp, setTemp] = useState("");
     const [unit, setUnit] = useState("Celsius");
 
-    // 다시 랜더링되면서 온도가 변환됨(자식 컴포넌트에서 setState 함수 호출)
+    // 리렌더링되면서 다시 계산됨, 하위 컴포넌트에서 setter 호출
     const _temp = (unit === "Celsius") ? (temp*9/5 + 32).toFixed(1)
                                        : ((temp-32) * 5/9).toFixed(1);
 
     return (
-        <div className={styles.card}>
-            <h2>Temp Converter</h2>
-            <TempValueComp temp={temp}
-                           unit={unit}
-                           onTempChange={setTemp} />
-            <TempUnitComp unit={unit}
-                          onUnitChange={setUnit} />
-            <p>Converted : { temp ? _temp : "--"} {unit === "Celsius" ? "℉" : "℃"}</p>
-        </div>
+        <>
+            <h2>Temp Converter: 하위 컴포넌트에서 setter 호출</h2>
+            <div className={styles.card}>
+                <TempValueComp temp={temp}
+                            unit={unit}
+                            onTempChange={setTemp} />
+                <TempUnitComp unit={unit}
+                            onUnitChange={setUnit} />
+                <p>Converted : { temp ? _temp : "--"} {unit === "Celsius" ? "℉" : "℃"}</p>
+            </div>
+        </>
     )
 }
 

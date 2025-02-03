@@ -18,17 +18,17 @@ function App() {
       {/* <h1>01. Component Props</h1>
       <ComponentPropsApp /> */}
 
-      <h1>02. Event Handler</h1>
-      <EventHandlerApp />
+      {/* <h1>02. Event Handler</h1>
+      <EventHandlerApp /> */}
 
-      {/* <h1>03. State Basic</h1>
+      {/* <h1>03. useState Hook</h1>
       <StateBasicApp /> */}
 
-      {/* <h1>04. State Utilize</h1>
+      {/* <h1>04. useState Hook 응용</h1>
       <StateUtilizeApp /> */}
 
-      {/* <h1>05. Reducer Basic</h1>
-      <ReducerBasicApp /> */}
+      <h1>05. Reducer Basic</h1>
+      <ReducerBasicApp />
 
       {/* <h1>06. Ref Basic</h1>
       <RefBasicApp /> */}

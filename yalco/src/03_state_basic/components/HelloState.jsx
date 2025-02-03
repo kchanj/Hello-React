@@ -4,24 +4,31 @@ import { useState } from "react";
 const HelloState = () => {
     return (
         <>
-            <h2>Simple State</h2>
+            <h2>useState 기본: count</h2>
             <SimpleCountButton />
+
+            <h2>useState 기본: toggle</h2>
             <TogglePinnButton />
-            <SumTotalButton />
+
+            <h2>useState 기본: async</h2>
+            <SetterAsyncButton />
+
+            <h2>useState 기본: prev state</h2>
+            <SetterPrevButton />
         </>
     )
 }
 
+/** useState 기본: count */
 const SimpleCountButton = () => {
 
     const [count, setCount] = useState(0);
 
-    console.log("SimpleCountButton")
-    console.log(useState(0));
+    console.log("useState 기본", useState(0));
 
     return (
         <div className={styles.card}>
-            <h2>Count: {count}</h2>
+            <h3>Count: {count}</h3>
             <button onClick={() => setCount(count + 1)}>
                 + 1
             </button>
@@ -32,6 +39,7 @@ const SimpleCountButton = () => {
     )
 }
 
+/** useState 기본: toggle */
 const TogglePinnButton = () => {
 
     const [isPinned, setPinned] = useState(false);
@@ -42,7 +50,7 @@ const TogglePinnButton = () => {
 
     return (
         <div className={styles.card}>
-            <h2>Pinn</h2>
+            <h3>Pinned: {String(isPinned)}</h3>
             <button onClick={togglePinned}>
                 {isPinned && '📌'} 동해물과 백두산이
             </button>
@@ -53,23 +61,28 @@ const TogglePinnButton = () => {
     )
 }
 
-const SumTotalButton = () => {
+/** useState 기본: async */
+const SetterAsyncButton = () => {
 
     const [count, setCount] = useState(0);
 
-    const sumTotal = () => {
-        setCount(prev => prev + 1);
-        setCount(prev => prev + 2);
-        setCount(prev => prev + 3);
-        setCount(prev => prev + 4);
-        setCount(prev => prev + 5);
+    const execCount = () => {
+        console.log('useState 기본: async, 0번 호출 => ', count);
+        setCount(count + 1);
+        setCount(count + 1);
+        setCount(count + 1);
+        setCount(count + 1);
+        setCount(count + 1);
+        console.log('useState 기본: async, 5번 호출 => ', count);
     }
+
+    console.log('useState 기본: async, 리렌더링 => ', count);
 
     return (
         <div className={styles.card}>
-            <h2>Count: {count}</h2>
-            <button onClick={sumTotal}>
-                1에서 5까지 합하기
+            <h3>Count: {count}</h3>
+            <button onClick={execCount}>
+                5번 호출하기
             </button>
             <button onClick={() => setCount(0)}>
                 초기화
@@ -77,4 +90,35 @@ const SumTotalButton = () => {
         </div>
     )
 }
+
+/** useState 기본: prev state */
+const SetterPrevButton = () => {
+
+    const [count, setCount] = useState(0);
+
+    const execCount = () => {
+        console.log('useState 기본: prev, 0번 호출 => ', count);
+        setCount(prev => prev + 1);
+        setCount(prev => prev + 1);
+        setCount(prev => prev + 1);
+        setCount(prev => prev + 1);
+        setCount(prev => prev + 1);
+        console.log('useState 기본: prev, 5번 호출 => ', count);
+    }
+
+    console.log('useState 기본: prev, 리렌더링 => ', count);
+
+    return (
+        <div className={styles.card}>
+            <h3>Count: {count}</h3>
+            <button onClick={execCount}>
+                5번 호출하기
+            </button>
+            <button onClick={() => setCount(0)}>
+                초기화
+            </button>
+        </div>
+    )
+}
+
 export { HelloState }

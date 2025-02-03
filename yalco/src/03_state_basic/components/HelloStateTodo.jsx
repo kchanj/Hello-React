@@ -1,13 +1,22 @@
 import styles from '../../Card.module.css'
 import { useState } from "react";
 
+const HelloStateTodo = () => {
+    return (
+        <>
+            <h2>useState 기본: Todo List</h2>
+            <TodoListManager />
+        </>
+    )
+}
+
 const TodoListManager = () => {
 
     const [todoList, setTodoList]
         = useState(["Learn React", "Build a project"]);
 
     const [newTodo, setNewTodo]
-        = useState("Hello React");
+        = useState("");
 
     const delTodoList = (index) => {
         setTodoList(
@@ -32,11 +41,9 @@ const TodoListManager = () => {
             <input type="text"
                    value={newTodo}
                    onChange={(e) => setNewTodo(e.target.value)} />
-            <button onClick={addTodoList}>
-                Add Todo
-            </button>
+            <button onClick={addTodoList}>Add Todo</button>
 
-            <h3>Toto List</h3>
+            <h3>Toto</h3>
             <ul>
                 {
                     todoList.map((todo, index) => {
@@ -53,4 +60,4 @@ const TodoListManager = () => {
     )
 }
 
-export { TodoListManager };
+export { HelloStateTodo };
