@@ -3,20 +3,22 @@ import { useState } from "react";
 
 const UserRoleManager = () => {
 
-    const [formData, setFormData] = useState({
+    const [user, setUser] = useState({
         username: '',
         subscribed: false,
         role: 'user'
     });
 
     const handleChange = (e) => {
+        console.log('UserRoleManager', e);
+
         const {name, type, value, checked} = e.target;
-        const _formData = {
-            ...formData,
+        const _user = {
+            ...user,
             [name]: (type === 'checkbox' ? checked : value) // Computed properties
         }
 
-        setFormData(_formData);
+        setUser(_user);
     };
 
     return (
@@ -24,26 +26,26 @@ const UserRoleManager = () => {
             <h2>User Role: 객체 state</h2>
             <div className={styles.card}>
                 <form>
-                    <p>Name: {formData.username}</p>
-                    <p>Subscription: {formData.subscribed && 'Subscribed'}</p>
-                    <p>Role: {formData.role}</p>
+                    <p>Name: {user.username}</p>
+                    <p>Subscription: {user.subscribed && 'Subscribed'}</p>
+                    <p>Role: {user.role}</p>
                     <hr/>
                     <input type="text"
                         name="username"
                         placeholder="Username"
-                        value={formData.username}
+                        value={user.username}
                         onChange={(e) => handleChange(e)} />
                     <br/>
                     <label>
                         <input type="checkbox"
                             name="subscribed"
-                            checked={formData.subscribed}
+                            checked={user.subscribed}
                             onChange={(e) => handleChange(e)} />
                         Subscription
                     </label>
                     <br/>
                     <select name="role"
-                            value={formData.role}
+                            value={user.role}
                             onChange={(e) => handleChange(e)}>
                         { ['user', 'admin', 'guest'].map((role) => (
                             <option key={role} value={role}>{role}</option>

@@ -1,11 +1,11 @@
-import { StateAgeWarning } from "./components/StateAgeWarning"
-import { ReducerAgeWarning } from "./components/ReducerAgeWarning"
+import { SimpleCounter } from "./components/SimpleCounter"
+import { UserAgeWarning } from "./components/UserAgeWarning"
 
 const ReducerBasicApp = () => {
     return (
         <>
-            <StateAgeWarning />
-            <ReducerAgeWarning />
+            <SimpleCounter />
+            <UserAgeWarning />
         </>
     )
 }

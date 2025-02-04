@@ -11,7 +11,7 @@ const UserProfileManager = () => {
 
     return (
         <>
-            <h2>User Profile: 상위/하위 컴포넌트 리렌더링</h2>
+            <h2>User Profile: 컴포넌트의 리렌더링 조건</h2>
             <div className={styles.card}>
                 <ul>
                     {
@@ -47,7 +47,7 @@ const UserProfile = ({name}) => {
 
     const [status, setStatus] = useState(true);
 
-    /* 상위가 리렌더링되면 하위도 리렌더링, 하위가 리렌더링되면 상위는 영향없음 */
+    /* 컴포넌트의 리렌더링: state 또는 props의 변경, 상위 컴포넌트의 리렌더링 */
     console.log('Rendered UserProfile: ', name, status ? 'Enable' : 'Disable');
 
     return (

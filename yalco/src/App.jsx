@@ -27,11 +27,11 @@ function App() {
       {/* <h1>04. useState Hook 응용</h1>
       <StateUtilizeApp /> */}
 
-      <h1>05. Reducer Basic</h1>
-      <ReducerBasicApp />
+      {/* <h1>05. Reducer Basic</h1>
+      <ReducerBasicApp /> */}
 
-      {/* <h1>06. Ref Basic</h1>
-      <RefBasicApp /> */}
+      <h1>06. Ref Basic</h1>
+      <RefBasicApp />
 
       {/* <h1>07. Effect Basic</h1>
       <EffectBasicApp /> */}

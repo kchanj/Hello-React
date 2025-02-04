@@ -6,13 +6,15 @@ const TempConverter = () => {
     const [temp, setTemp] = useState("");
     const [unit, setUnit] = useState("Celsius");
 
+    console.log('Rendered TempConverter: ', temp, unit);
+
     // 리렌더링되면서 다시 계산됨, 하위 컴포넌트에서 setter 호출
     const _temp = (unit === "Celsius") ? (temp*9/5 + 32).toFixed(1)
                                        : ((temp-32) * 5/9).toFixed(1);
 
     return (
         <>
-            <h2>Temp Converter: 하위 컴포넌트에서 setter 호출</h2>
+            <h2>Temp Converter: 컴포넌트의 state 공유</h2>
             <div className={styles.card}>
                 <TempValueComp temp={temp}
                             unit={unit}
@@ -26,6 +28,9 @@ const TempConverter = () => {
 }
 
 const TempValueComp = ({temp, unit, onTempChange}) => {
+
+    console.log('Rendered TempValueComp: ', temp, unit);
+
     return (
         <div className="temp-input">
             <input type="number"
@@ -38,6 +43,9 @@ const TempValueComp = ({temp, unit, onTempChange}) => {
 }
 
 const TempUnitComp = ({unit, onUnitChange}) => {
+
+    console.log('Rendered TempUnitComp: ', unit);
+
     return (
         <div className="unit-selector">
             <label>
