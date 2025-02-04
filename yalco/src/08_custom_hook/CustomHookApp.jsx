@@ -1,14 +1,9 @@
-import { SimpleCounter } from './components/SimpleCounter'
-import { WindowResize } from './components/WindowResize'
+import { HelloCustomHook } from './components/HelloCustomHook'
 
 const CustomHookApp = () => {
     return (
         <>
-            <h2>SimpleCounter</h2>
-            <SimpleCounter />
-
-            <h2>WindowResize</h2>
-            <WindowResize />
+            <HelloCustomHook />
         </>
     )
 }

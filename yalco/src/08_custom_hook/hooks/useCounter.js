@@ -1,17 +1,23 @@
 import { useState } from 'react'
 
-function useCounter(initialValue = 0) {
+/**
+ * Custom Hook
+ * - 명명규칙 준수: useXxxxx
+ * - 일반 Javascript와 다른 점은 다른 Hook를 사용할 수 있음
+ */
+const useCounter = (initialValue = 0) => {
+    
     const [count, setCount] = useState(initialValue);
 
-    const increase = () => {
+    const increment = () => {
         setCount(prev => prev + 1);
     }
 
-    const decrease = () => {
+    const decrement = () => {
         setCount(prev => prev - 1);
     }
 
-    return { count, increase, decrease }
+    return { count, increment, decrement }
 }
 
 export default useCounter
