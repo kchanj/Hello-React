@@ -1,12 +1,11 @@
-import { SimpleCounter, StateCounter } from "./components/HelloRef"
-import { TextBox } from "./components/TextBox"
+import { HelloRef } from "./components/HelloRef"
+import { UsageRef } from "./components/UsageRef"
 
 const RefBasicApp = () => {
     return (
         <>
-            <SimpleCounter />
-            <StateCounter />
-            <TextBox />
+            <HelloRef />
+            <UsageRef />
         </>
     )
 }

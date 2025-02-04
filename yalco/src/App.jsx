@@ -30,14 +30,14 @@ function App() {
       {/* <h1>05. Reducer Basic</h1>
       <ReducerBasicApp /> */}
 
-      <h1>06. Ref Basic</h1>
-      <RefBasicApp />
+      {/* <h1>06. Ref Basic</h1>
+      <RefBasicApp /> */}
 
       {/* <h1>07. Effect Basic</h1>
       <EffectBasicApp /> */}
 
-      {/* <h1>08. Custom Hook</h1>
-      <CustomHookApp /> */}
+      <h1>08. Custom Hook</h1>
+      <CustomHookApp />
     </>
   )
 }

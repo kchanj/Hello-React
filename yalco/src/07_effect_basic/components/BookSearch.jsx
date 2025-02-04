@@ -23,22 +23,33 @@ const BookSearch = () => {
     }, []);
 
     if(loading) {
-        return <p>Loading...</p>
+        return (
+            <>
+                <h2>useEffect 기본: 레이아웃 렌더링 후, 내용 가져오기</h2>
+                <div className={styles.card}>
+                    <h3>Book Search</h3>
+                    <p>Loading...</p>
+                </div>
+            </>
+        )
     }
 
     return (
-        <div className={styles.card}>
-            <h3>Book Search</h3>
-            <ul>
-                {books.map(book => (
-                    <li key={book.id}>
-                        <strong>{book.title}</strong>
-                        <br/>
-                        by {book.author}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <>
+            <h2>useEffect 기본: 레이아웃 렌더링 후, 내용 가져오기</h2>
+            <div className={styles.card}>
+                <h3>Book Search</h3>
+                <ul>
+                    {books.map(book => (
+                        <li key={book.id}>
+                            <strong>{book.title}</strong>
+                            <br/>
+                            by {book.author}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </>
     )
 }
 

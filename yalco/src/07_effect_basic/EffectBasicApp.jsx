@@ -1,13 +1,13 @@
 import { HelloLifecycle  } from "./components/HelloLifecycle"
-import { CounterLifecycle  } from "./components/CounterLifecycle"
 import { BookSearch  } from "./components/BookSearch"
+import { HelloTimer } from "./components/HelloTimer"
 
 const EffectBasicApp = () => {
     return (
         <>
             <HelloLifecycle />
-            <CounterLifecycle />
             <BookSearch />
+            <HelloTimer />
         </>
     )
 }
