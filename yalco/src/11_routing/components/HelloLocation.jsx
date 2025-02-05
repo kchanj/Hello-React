@@ -1,0 +1,76 @@
+import { Routes, Route, Link, useLocation, useParams } from "react-router-dom"
+import styles from '../../Card.module.css'
+import { useEffect } from "react"
+
+const HelloLocation = () => {
+    return (
+        <>
+            <h2>Location 기본: Location 정보 접근하기</h2>
+            <nav>
+                <Link to={'/'}>Home</Link>
+                <Link to={'/user/kim'}>User1</Link>
+                <Link to={'/user/lee'}>User2</Link>
+                <Link to={'/search?keyword=react'}>Search1</Link>
+                <Link to={'/search?keyword=vuejs'}>Search2</Link>
+            </nav>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/user/:id' element={<User />} />
+                <Route path='/search' element={<Search />} />
+                <Route path='*' element={<div className={styles.card}><h3>404 - Page Not Found</h3></div>} />
+            </Routes>
+        </>
+    )
+}
+
+const Home = () => {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        console.log(`[Home] path: ${location.pathname}`);
+    }, [location]);
+
+    return (
+        <div className={styles.card}>
+            <h3>Home</h3>
+        </div>
+    )
+}
+
+const User = () => {
+
+    const location = useLocation();
+    const { id } = useParams();
+
+    useEffect(() => {
+        console.log(`[User] path: ${location.pathname}`);
+    }, [location, id]);
+
+    return (
+        <div className={styles.card}>
+            <h3>User</h3>
+            <p>id : {id}</p>
+        </div>
+    )
+}
+
+const Search = () => {
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const keyword = queryParams.get('keyword');
+
+    useEffect(() => {
+        console.log(`[Search] path: ${location.pathname}`);
+    }, [location, keyword]);
+
+    return (
+        <div className={styles.card}>
+            <h3>Search</h3>
+            <p>keyword : {keyword}</p>
+        </div>
+    )
+}
+
+export { HelloLocation }
