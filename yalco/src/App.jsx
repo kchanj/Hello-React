@@ -8,6 +8,7 @@ import RefBasicApp from './06_ref_basic/RefBasicApp'
 import EffectBasicApp from './07_effect_basic/EffectBasicApp'
 import CustomHookApp from './08_custom_hook/CustomHookApp'
 import OptimizationApp from './09_optimization/OptimizationApp'
+import ContextApp from './10_context/ContextApp'
 import './App.css'
 
 function App() {
@@ -40,8 +41,11 @@ function App() {
       {/* <h1>08. Custom Hook</h1>
       <CustomHookApp /> */}
 
-      <h1>09. Optimization</h1>
-      <OptimizationApp />
+      {/* <h1>09. Optimization</h1>
+      <OptimizationApp /> */}
+
+      <h1>10. Context</h1>
+      <ContextApp />
     </>
   )
 }
