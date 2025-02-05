@@ -7,6 +7,7 @@ import ReducerBasicApp from './05_reducer_basic/ReducerBasicApp'
 import RefBasicApp from './06_ref_basic/RefBasicApp'
 import EffectBasicApp from './07_effect_basic/EffectBasicApp'
 import CustomHookApp from './08_custom_hook/CustomHookApp'
+import OptimizationApp from './09_optimization/OptimizationApp'
 import './App.css'
 
 function App() {
@@ -36,8 +37,11 @@ function App() {
       {/* <h1>07. Effect Basic</h1>
       <EffectBasicApp /> */}
 
-      <h1>08. Custom Hook</h1>
-      <CustomHookApp />
+      {/* <h1>08. Custom Hook</h1>
+      <CustomHookApp /> */}
+
+      <h1>09. Optimization</h1>
+      <OptimizationApp />
     </>
   )
 }
