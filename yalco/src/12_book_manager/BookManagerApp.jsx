@@ -5,7 +5,6 @@ const BookManagerApp = () => {
     return (
         <>
             <HelloBookManager />
-            <ReduceBookManager />
         </>
     )
 }

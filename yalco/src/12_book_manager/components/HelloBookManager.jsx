@@ -1,17 +1,34 @@
-import { useState } from "react";
-import useFetch from "../hooks/useFetch";
 import styles from '../../Card.module.css';
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
+import CommonLoading from "./CommonLoading";
+import CommonError from "./CommonError";
 
 const HelloBookManager = () => {
     return (
         <>
             <h2>HelloBookManager</h2>
-            <HelloBookApp />
+            <BrowserRouter>
+                <HelloBookApp />
+            </BrowserRouter>
         </>
     )
 }
 
 const HelloBookApp = () => {
+    return (
+        <Routes>
+            <Route path="/"         element={<HelloBookList />} />
+            <Route path="/view/:id" element={<HelloBookView />} />
+            <Route path="/edit/:id" element={<HelloBookEdit />} />
+            <Route path="/add"      element={<HelloBookAdd />} />
+            <Route path="*"         element={<CommonError />} />
+        </Routes>
+    )
+}
+
+const HelloBookList = () => {
 
     const [ params, setParams ] = useState({keyword: '', genre: 'Fiction'});
     const query = new URLSearchParams(params).toString();
@@ -25,21 +42,8 @@ const HelloBookApp = () => {
         setParams(prev => ({...prev, genre}));
     }
 
-    console.log(`[HelloBookManager] loading=${loading ? 'y' : 'n'}, data=${data ? data.length : 0}, query=${query}`);
-
-    if(loading) return (
-        <div className={styles.card}>
-            <div>⏳</div>
-            Loading...
-        </div>
-    ) 
-
-    if(error) return (
-        <div className={styles.card}>
-            <div>⚠️</div>
-            Error!
-        </div>
-    )
+    if (loading) return <CommonLoading />
+    if (error) return <CommonError /> 
 
     return (
         <div className={styles.card}>
@@ -66,6 +70,33 @@ const HelloBookApp = () => {
                 </div>
                 ))}
             </div>
+        </div>
+    )
+}
+
+const HelloBookView = () => {
+
+    return (
+        <div className={styles.card}>
+            BookView
+        </div>
+    )
+}
+
+const HelloBookEdit = () => {
+
+    return (
+        <div className={styles.card}>
+            BookEdit
+        </div>
+    )
+}
+
+const HelloBookAdd = () => {
+
+    return (
+        <div className={styles.card}>
+            BookAdd
         </div>
     )
 }
