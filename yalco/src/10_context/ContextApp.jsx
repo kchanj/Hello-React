@@ -1,9 +1,13 @@
-import { HelloContext } from "./components/HelloContext"
+import { SimpleCounter } from "./components/SimpleCounter"
+import { HelloCounter } from "./components/HelloCounter"
+import { HelloToggler } from "./components/HelloToggler"
 
 const ContextApp = () => {
     return (
         <>
-            <HelloContext />
+            <SimpleCounter />
+            <HelloCounter />
+            <HelloToggler />
         </>
     )
 }

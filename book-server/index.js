@@ -24,18 +24,20 @@ let books = [
  * 목록
  ************************************************************/
 app.get('/books', (req, res) => {
-  const { genre, search } = req.query;
+  const { genre, keyword } = req.query;
+
   let result = books;
-  
+
   if(genre) {
+    const _genre = genre.toLowerCase();
     result = result.filter(book =>
-      book.genre.toLowerCase() === genre.toLowerCase());
+      book.genre.toLowerCase() === _genre);
   }
 
-  if(search) {
-    const keyword = search.toLowerCase();
+  if(keyword) {
+    const _keyword = keyword.toLowerCase();
     result = result.filter(book =>
-      book.title.toLowerCase().includes(keyword) || book.author.toLowerCase().includes(keyword)
+      book.title.toLowerCase().includes(_keyword) || book.author.toLowerCase().includes(_keyword)
     )
   }
 

@@ -10,8 +10,8 @@ const HelloLocation = () => {
                 <Link to={'/'}>Home</Link>
                 <Link to={'/user/kim'}>User1</Link>
                 <Link to={'/user/lee'}>User2</Link>
-                <Link to={'/search?keyword=react'}>Search1</Link>
-                <Link to={'/search?keyword=vuejs'}>Search2</Link>
+                <Link to={'/search?keyword=react&category=lang'}>Search1</Link>
+                <Link to={'/search?keyword=vuejs&category=lang'}>Search2</Link>
             </nav>
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -28,7 +28,8 @@ const Home = () => {
     const location = useLocation();
 
     useEffect(() => {
-        console.log(`[Home] path: ${location.pathname}`);
+        console.log(`[Home] location:`, location);
+        console.log(`[Home] pathname:`, location.pathname);
     }, [location]);
 
     return (
@@ -41,16 +42,18 @@ const Home = () => {
 const User = () => {
 
     const location = useLocation();
-    const { id } = useParams();
+    const params = useParams();
 
     useEffect(() => {
-        console.log(`[User] path: ${location.pathname}`);
-    }, [location, id]);
+        console.log(`[User] location:`, location);
+        console.log(`[User] pathname:`, location.pathname);
+        console.log(`[User] params:`, params);
+    }, [location, params.id]);
 
     return (
         <div className={styles.card}>
             <h3>User</h3>
-            <p>id : {id}</p>
+            <p>id : {params.id}</p>
         </div>
     )
 }
@@ -58,11 +61,16 @@ const User = () => {
 const Search = () => {
 
     const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const keyword = queryParams.get('keyword');
+    const query = new URLSearchParams(location.search);
+    const keyword = query.get('keyword');
 
     useEffect(() => {
-        console.log(`[Search] path: ${location.pathname}`);
+        console.log(`[Search] location:`, location);
+        console.log(`[Search] pathname:`, location.pathname);
+        console.log(`[Search] search:`, location.search);
+        for (const [key, value] of query) {
+            console.log(`[Search] query: ${key} = ${value}`);
+        }
     }, [location, keyword]);
 
     return (

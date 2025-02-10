@@ -10,6 +10,7 @@ import CustomHookApp from './08_custom_hook/CustomHookApp'
 import OptimizationApp from './09_optimization/OptimizationApp'
 import ContextApp from './10_context/ContextApp'
 import RoutingApp from './11_routing/RoutingApp'
+import BookManagerApp from './12_book_manager/BookManagerApp'
 import './App.css'
 
 function App() {
@@ -48,8 +49,11 @@ function App() {
       {/* <h1>10. Context</h1>
       <ContextApp /> */}
 
-      <h1>11. Routing</h1>
-      <RoutingApp />
+      {/* <h1>11. Routing</h1>
+      <RoutingApp /> */}
+
+      <h1>12. Book Manager</h1>
+      <BookManagerApp />
     </>
   )
 }
