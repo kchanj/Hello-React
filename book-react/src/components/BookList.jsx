@@ -1,47 +1,29 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { renderStars, getBookEmoji } from '../utils'
+import { useBooksContext } from '../contexts/BooksContext'
 import Error from './Error'
 import Loading from './Loading'
 import styles from './BookList.module.css'
-
+import useBookEdit from '../hooks/useBookEdit';
 
 const BookList = () => {
 
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const {books, loading, error} = useBooksContext();
+    const {setBookAvailable} = useBookEdit();
 
-    const API_BASE_URL = 'http://localhost:3000/books';
+    console.log(`[   BookList] Render: books=${books ? books.length : 0}, loading=${loading}`);
 
-    const fetchData = async() => {
-        setLoading(true);
-        setError(null);
-        try {
-            const response = await fetch(`${API_BASE_URL}`);
-            if(!response.ok) {
-                throw new Error('Failed to fetch data');
-            }
-
-            const body = await response.json();
-            setData(body);
-        } catch(err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
+    const handleAvailable = (id, currentAvailable) => {
+        setBookAvailable(id, currentAvailable);
     }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     if (loading) return <Loading />
     if (error) return <Error /> 
 
     return (
         <section className={styles.list}>
-            {data.map(book => (
+            {books.map(book => (
                 <article key={book.id} className={styles.item}>
                     <div>{getBookEmoji(book.id)}</div>
                     <div>

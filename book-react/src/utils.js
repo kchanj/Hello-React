@@ -7,6 +7,6 @@ export const getBookEmoji = (index) => {
 }
 
 export const genres = [
-  'Fiction', 'Non-fiction', 'Fantasy',
-'Dystopian', 'Philosophy', 'Romance', 'Programming'
+  'Fiction', 'Non-fiction', 'Fantasy', 'Romance',
+  'Dystopian', 'Philosophy', 'Programming'
 ]

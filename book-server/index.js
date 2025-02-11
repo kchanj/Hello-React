@@ -11,13 +11,13 @@ let books = [
   { id: '01', publishedDate: '1925-04-10', rating: 5, available: true, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', genre: 'Fiction' },
   { id: '02', publishedDate: '2011-01-01', rating: 4, available: true, title: 'Sapiens: A Brief History of Humankind', author: 'Yuval Noah Harari', genre: 'Non-fiction' },
   { id: '03', publishedDate: '1997-06-26', rating: 3, available: false, title: 'Harry Potter and the Sorcerer\'s Stone', author: 'J.K. Rowling', genre: 'Fantasy' },
-  { id: '04', publishedDate: '1960-07-11', rating: 5, available: true, title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Fiction' },
-  { id: '05', publishedDate: '1949-06-08', rating: 5, available: false, title: '1984', author: 'George Orwell', genre: 'Dystopian' },
-  { id: '06', publishedDate: '1951-07-16', rating: 4, available: true, title: 'The Catcher in the Rye', author: 'J.D. Salinger', genre: 'Fiction' },
-  { id: '07', publishedDate: '1932-01-01', rating: 3, available: true, title: 'Brave New World', author: 'Aldous Huxley', genre: 'Dystopian' },
-  { id: '08', publishedDate: '1937-09-21', rating: 5, available: false, title: 'The Hobbit', author: 'J.R.R. Tolkien', genre: 'Fantasy' },
-  { id: '09', publishedDate: '0180-01-01', rating: 4, available: true, title: 'Meditations', author: 'Marcus Aurelius', genre: 'Philosophy' },
-  { id: '10', publishedDate: '1813-01-28', rating: 5, available: true, title: 'Pride and Prejudice', author: 'Jane Austen', genre: 'Romance' }
+  { id: '04', publishedDate: '1960-07-11', rating: 5, available: false, title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Romance' },
+  { id: '05', publishedDate: '1949-06-08', rating: 5, available: true, title: '1984', author: 'George Orwell', genre: 'Dystopian' },
+  { id: '06', publishedDate: '1951-07-16', rating: 4, available: true, title: 'The Catcher in the Rye', author: 'J.D. Salinger', genre: 'Philosophy' },
+  { id: '07', publishedDate: '1932-01-01', rating: 3, available: false, title: 'Brave New World', author: 'Aldous Huxley', genre: 'Programming' },
+  { id: '08', publishedDate: '1937-09-21', rating: 5, available: false, title: 'The Hobbit', author: 'J.R.R. Tolkien', genre: 'Fiction' },
+  { id: '09', publishedDate: '0180-01-01', rating: 4, available: true, title: 'Meditations', author: 'Marcus Aurelius', genre: 'Fiction' },
+  { id: '10', publishedDate: '1813-01-28', rating: 5, available: true, title: 'Pride and Prejudice', author: 'Jane Austen', genre: 'Fantasy' }
 ];
 
 /************************************************************

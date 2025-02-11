@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import BookList from '../components/BookList'
 
-const Home = () => {
+const BookHome = () => {
     return (
         <div>
             <Header enable={true}>Book List</Header>
@@ -10,4 +10,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default BookHome
