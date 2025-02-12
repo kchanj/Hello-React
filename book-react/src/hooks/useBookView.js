@@ -4,7 +4,7 @@ const API_BASE_URL = 'http://localhost:3000'
 
 const useBookView = () => {
 
-    const [book, setBook] = useState(null);
+    const [book, setBook] = useState({});
 
     const getBook = async(id) => {
         try {

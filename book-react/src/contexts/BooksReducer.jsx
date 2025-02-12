@@ -5,15 +5,15 @@ const booksReducer = (books, action) => {
             return action.books;
 
         case 'ADD_BOOK':
-            console.log(`[BookReducer] ${action.type}: `, action.book);
+            console.log(`[BookReducer] ${action.type}: book=${action.book.id}`);
             return [...books, action.book];
 
         case 'DEL_BOOK':
-            console.log(`[BookReducer] ${action.type}: `, action.book);
-            return books.filter(book => book.id !== action.book.id);
+            console.log(`[BookReducer] ${action.type}: book=${action.id}`);
+            return books.filter(book => book.id !== action.id);
 
         case 'EDIT_BOOK':
-            console.log(`[BookReducer] ${action.type}: `, action.book);
+            console.log(`[BookReducer] ${action.type}: book=${action.book.id}`);
             return books.map(book => book.id === action.book.id ? action.book : book);
 
         default:

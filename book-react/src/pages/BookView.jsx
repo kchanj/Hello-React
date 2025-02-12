@@ -3,12 +3,14 @@ import BookDetail from '../components/BookDetail'
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import useBookView from "../hooks/useBookView";
+import useBookEdit from "../hooks/useBookEdit";
 
 const BookView = () => {
 
     const {id} = useParams();
     const navigate = useNavigate();
     const {book, getBook} = useBookView();
+    const {delBook} = useBookEdit();
 
     useEffect(() => {
         getBook(id);
@@ -19,7 +21,7 @@ const BookView = () => {
     }
 
     const doDelete = () => {
-        navigate(`/edit/${id}`);
+        delBook(id);
     }
 
     return (
