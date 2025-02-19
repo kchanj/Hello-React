@@ -158,5 +158,3 @@ Done in 105.86s.
 3. Hello-react 어플리케이션 실행
 --------------------------------------------------
 C:\Temp\yarn\hello-react> yarn start
-
-
