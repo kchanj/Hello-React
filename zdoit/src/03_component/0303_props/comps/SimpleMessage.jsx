@@ -7,6 +7,7 @@ class SimpleMessage extends React.Component {
 
         return (
             <div className="message-container">
+                <h4>Simple Message</h4>
                 <span>{message}</span>
             </div>
         )

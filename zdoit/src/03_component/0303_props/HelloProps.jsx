@@ -18,9 +18,7 @@ class HelloProps extends React.Component {
             <div>
                 <h3>3-3 컴포넌트에 데이터를 전달하는 프로퍼티</h3>
                 <SimpleMessage message="Hello Kim" />
-                <hr />
                 <StringMessage message="Hello Lee" />
-                <hr />
                 <VariedMessage name={name}
                                male={male}
                                age={age}
@@ -28,7 +26,7 @@ class HelloProps extends React.Component {
                                family={family}
                                motto={motto}
                                greet={greet}>
-                    <h4>나를 소개합니다</h4>
+                    <h4>Varied Message</h4>
                 </VariedMessage>
             </div>
         )

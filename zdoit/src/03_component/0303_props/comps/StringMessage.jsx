@@ -8,6 +8,7 @@ class StringMessage extends React.Component {
 
         return (
             <div className="message-container">
+                <h4>String Message</h4>
                 <span>{message}</span>
             </div>
         )
