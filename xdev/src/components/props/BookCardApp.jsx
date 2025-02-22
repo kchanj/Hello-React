@@ -1,5 +1,5 @@
 import BookCard from "./BookCard"
-import {books} from "../../resources/books"
+import books from "../../resources/books"
 
 const BookCardApp = () => {
 
