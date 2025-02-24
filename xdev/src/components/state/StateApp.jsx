@@ -1,5 +1,8 @@
-import PrevCounterApp from "./PrevCounterApp copy";
+import FormDataObjectApp from "./FormDataObjectApp";
+import FormDataSimpleApp from "./FormDataSimpleApp";
+import PrevCounterApp from "./PrevCounterApp";
 import SimpleCounterApp from "./SimpleCounterApp";
+import TempConverterApp from "./TempConverterApp";
 import TodoListApp from "./TodoListApp";
 import TogglePinnedApp from "./TogglePinnedApp";
 import UserProfileApp from "./UserProfileApp";
@@ -17,6 +20,12 @@ const StateApp = () => {
             <TodoListApp />
             <h2>UserProfileApp</h2>
             <UserProfileApp />
+            <h2>TempConverterApp</h2>
+            <TempConverterApp />
+            <h2>FormDataSimpleApp</h2>
+            <FormDataSimpleApp />
+            <h2>FormDataObjectApp</h2>
+            <FormDataObjectApp />
         </>
     )
 }

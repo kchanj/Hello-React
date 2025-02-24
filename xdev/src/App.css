@@ -12,9 +12,17 @@
 }
 
 #root input {
-  height: auto;
-  line-height: normal; 
+  margin: 4px;
   padding: .6em .5em;
+  height: auto;
+  line-height: normal;
+}
+
+#root select {
+  margin: 4px;
+  padding: .6em .5em;
+  height: auto;
+  line-height: normal;
 }
 
 #root {
