@@ -1,4 +1,4 @@
-import ReducerApp from "./reducer/ReducerApp";
+import ReducerApp from "./hook_reducer/ReducerApp";
 
 const ReducerPage = () => {
     return (

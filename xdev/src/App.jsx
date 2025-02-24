@@ -5,21 +5,23 @@ import PropsPage from './components/PropsPage'
 import EventPage from './components/EventPage'
 import StatePage from './components/StatePage'
 import ReducerPage from './components/ReducerPage'
+import RefPage from './components/RefPage'
 import './App.css'
 
 function App() {
     return (
-        <Layout>
-            <BrowserRouter>
+        <BrowserRouter>
+            <Layout>
                 <Routes>
                     <Route path='/' element={<IndexPage />} />
                     <Route path='/props' element={<PropsPage />} />
                     <Route path='/event' element={<EventPage />} />
                     <Route path='/state' element={<StatePage />} />
                     <Route path='/reducer' element={<ReducerPage />} />
+                    <Route path='/ref' element={<RefPage />} />
                 </Routes>
-            </BrowserRouter>
-        </Layout>
+            </Layout>
+        </BrowserRouter>
     )
 }
 
