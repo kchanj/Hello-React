@@ -6,6 +6,7 @@ import EventPage from './components/EventPage'
 import StatePage from './components/StatePage'
 import ReducerPage from './components/ReducerPage'
 import RefPage from './components/RefPage'
+import EffectPage from './components/EffectPage'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                     <Route path='/state' element={<StatePage />} />
                     <Route path='/reducer' element={<ReducerPage />} />
                     <Route path='/ref' element={<RefPage />} />
+                    <Route path='/effect' element={<EffectPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
