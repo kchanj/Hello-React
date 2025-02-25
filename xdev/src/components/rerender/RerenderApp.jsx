@@ -11,6 +11,8 @@ const RerenderApp = () => {
             <ParentRerenderApp />
             <h2>HookChangeApp</h2>
             <HookChangeApp />
+
+            https://www.developerway.com/posts/react-re-renders-guide
         </>
     )
 }
