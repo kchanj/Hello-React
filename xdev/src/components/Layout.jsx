@@ -11,6 +11,8 @@ const Layout = ({children}) => {
                 <li><Link to="/reducer">Reducer</Link></li>
                 <li><Link to="/ref">Ref</Link></li>
                 <li><Link to="/effect">Effect</Link></li>
+                <li><Link to="/custom">Custom</Link></li>
+                <li><Link to="/rerender">Rerender</Link></li>
             </ul>
             {children}
         </div>

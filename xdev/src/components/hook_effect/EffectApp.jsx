@@ -1,4 +1,4 @@
-import BookListApp from "./BookListApp";
+import LocalBookListApp from "./LocalBookListApp";
 import EffectCounterApp from "./EffectCounterApp";
 import LifecycleClassCompApp from "./LifecycleClassCompApp";
 import LifecycleFuncCompApp from "./LifecycleFuncCompApp";
@@ -13,8 +13,8 @@ const EffectApp = () => {
             <LifecycleFuncCompApp />
             <h2>EffectCounterApp</h2>
             <EffectCounterApp />
-            <h2>BookListApp</h2>
-            <BookListApp />
+            <h2>LocalBookListApp</h2>
+            <LocalBookListApp />
             <h2>ToggleTimerApp</h2>
             <ToggleTimerApp />
         </>

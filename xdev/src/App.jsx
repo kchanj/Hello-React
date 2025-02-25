@@ -7,6 +7,8 @@ import StatePage from './components/StatePage'
 import ReducerPage from './components/ReducerPage'
 import RefPage from './components/RefPage'
 import EffectPage from './components/EffectPage'
+import CustomPage from './components/CustomPage'
+import RerenderPage from './components/RerenderPage'
 import './App.css'
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
                     <Route path='/reducer' element={<ReducerPage />} />
                     <Route path='/ref' element={<RefPage />} />
                     <Route path='/effect' element={<EffectPage />} />
+                    <Route path='/custom' element={<CustomPage />} />
+                    <Route path='/rerender' element={<RerenderPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

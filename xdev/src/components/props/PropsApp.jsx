@@ -2,7 +2,7 @@ import BookCardApp from "./BookCardApp";
 import BookContentsApp from "./BookContentsApp";
 import BookOpacityApp from "./BookOpacityApp";
 
-const PropsPage = () => {
+const PropsApp = () => {
     return (
         <>
             <h2>BookCardApp</h2>
@@ -15,4 +15,4 @@ const PropsPage = () => {
     )
 }
 
-export default PropsPage;
+export default PropsApp;

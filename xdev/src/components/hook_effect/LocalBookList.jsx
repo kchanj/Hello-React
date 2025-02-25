@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../../Card.module.css'
 
-const BookList = () => {
+const LocalBookList = () => {
 
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(false);
@@ -56,4 +56,4 @@ const BookList = () => {
     )
 }
 
-export default BookList;
+export default LocalBookList;
