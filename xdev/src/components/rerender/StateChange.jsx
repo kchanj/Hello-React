@@ -3,32 +3,25 @@ import styles from '../../Card.module.css'
 
 const StateChange = () => {
 
-    const mssgref = useRef('');
-    const [message, setMessage] = useState('');
+    const cntref = useRef(0);
+    const [count, setCount] = useState(0);
 
-    const handleMssgref = (value) => {
-        mssgref.current = value;
-        console.log(`[StateChange] Typing: ${mssgref.current}`);
+    const add = () => {
+        cntref.current += 1;
+        console.log(`[StateChange] cntref: ${cntref.current}`);
     }
 
-    const handleMessage = () => {
-        setMessage(mssgref.current);
-        console.log(`[StateChange] Apply: ${mssgref.current}`);
+    const ref = () => {
+        setCount(cntref.current)
     }
 
     console.log(`[StateChange] render`);
 
     return (
-        <div className={styles.card}>
-            <p>State Change</p>
-            <p>message: {message}</p>
-            <label>
-                <input type='text'
-                    ref={mssgref}
-                    onChange={(e) => handleMssgref(e.target.value)}
-                    placeholder='Type Message' />
-                <button onClick={handleMessage}>Apply Message</button>
-            </label>
+        <div className={styles.content}>
+            <p>Count: {count}</p>
+            <button onClick={add}>Refer +1</button>
+            <button onClick={ref}>Apply state</button>
         </div>
     )
 }

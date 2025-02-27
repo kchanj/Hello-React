@@ -10,7 +10,7 @@ const CustomCounter = () => {
         <div className={styles.card}>
             <p>Count : {count}</p>
             <button onClick={add}>+1</button>
-            <button onClick={sub}>+1</button>
+            <button onClick={sub}>-1</button>
         </div>
     )
 }
