@@ -10,6 +10,7 @@ import EffectPage from './components/EffectPage'
 import CustomPage from './components/CustomPage'
 import RerenderPage from './components/RerenderPage'
 import ContextPage from './components/ContextPage'
+import OptimizationPage from './components/OptimizationPage'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                     <Route path='/custom' element={<CustomPage />} />
                     <Route path='/rerender' element={<RerenderPage />} />
                     <Route path='/context' element={<ContextPage />} />
+                    <Route path='/optimization' element={<OptimizationPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
