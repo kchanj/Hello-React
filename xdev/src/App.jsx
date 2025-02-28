@@ -8,9 +8,11 @@ import ReducerPage from './components/ReducerPage'
 import RefPage from './components/RefPage'
 import EffectPage from './components/EffectPage'
 import CustomPage from './components/CustomPage'
-import RerenderPage from './components/RerenderPage'
 import ContextPage from './components/ContextPage'
 import OptimizationPage from './components/OptimizationPage'
+import RerenderPage from './components/RerenderPage'
+import RerenderAntiPage from './components/RerenderAntiPage'
+import RoutingPage from './components/RoutingPage'
 import './App.css'
 
 function App() {
@@ -26,9 +28,11 @@ function App() {
                     <Route path='/ref' element={<RefPage />} />
                     <Route path='/effect' element={<EffectPage />} />
                     <Route path='/custom' element={<CustomPage />} />
-                    <Route path='/rerender' element={<RerenderPage />} />
                     <Route path='/context' element={<ContextPage />} />
                     <Route path='/optimization' element={<OptimizationPage />} />
+                    <Route path='/rerender' element={<RerenderPage />} />
+                    <Route path='/rerender-anti' element={<RerenderAntiPage />} />
+                    <Route path='/routing/:lang' element={<RoutingPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

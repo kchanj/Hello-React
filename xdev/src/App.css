@@ -25,6 +25,10 @@
   line-height: normal;
 }
 
+#root nav > * {
+  margin: 0 6px;
+}
+
 #root {
   margin: 0 auto;
 }

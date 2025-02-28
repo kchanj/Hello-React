@@ -1,21 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Layout = ({children}) => {
+
+    const navigate = useNavigate();
+
+    const goMenu = (menu) => {
+        let path = '/';
+        switch(menu) {
+            case 'rerender' :
+                path = '/rerender';
+                break;
+            case 'rerender-anti' :
+                path = '/rerender-anti';
+                break;
+            case 'routing' :
+                path = '/routing/javascript?library=react&keyword=hooks';
+                break;
+            default :
+                path = '/';
+        }
+
+        navigate(path);
+    }
+
     return (
         <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/props">Props</Link></li>
-                <li><Link to="/event">Event</Link></li>
-                <li><Link to="/state">State</Link></li>
-                <li><Link to="/reducer">Reducer</Link></li>
-                <li><Link to="/ref">Ref</Link></li>
-                <li><Link to="/effect">Effect</Link></li>
-                <li><Link to="/custom">Custom</Link></li>
-                <li><Link to="/rerender">Rerender</Link></li>
-                <li><Link to="/context">Context</Link></li>
-                <li><Link to="/optimization">Optimization</Link></li>
-            </ul>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/props">Props</Link>
+                <Link to="/event">Event</Link>
+                <Link to="/state">State</Link>
+                <Link to="/reducer">Reducer</Link>
+                <Link to="/ref">Ref</Link>
+                <Link to="/effect">Effect</Link>
+                <Link to="/custom">Custom</Link>
+                <Link to="/context">Context</Link>
+                <Link to="/optimization">Optimization</Link>
+                <Link to="/rerender">Rerender</Link>
+            </nav>
+            <div>
+                <button onClick={() => goMenu('rerender')}>Rerender</button>
+                <button onClick={() => goMenu('rerender-anti')}>Rerender Anti</button>
+                <button onClick={() => goMenu('routing')}>Routing</button>
+            </div>
             {children}
         </div>
     )
