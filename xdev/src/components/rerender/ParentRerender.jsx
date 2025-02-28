@@ -3,19 +3,30 @@ import styles from '../../Card.module.css'
 
 const ParentRerender = () => {
 
+    console.log(`[ParentRerender] render`);
+
+    return (
+        <ParentComp />
+    )
+}
+
+const ParentComp = () => {
+
     const [count, setCount] = useState(0);
+
+    console.log(`[ParentRerender] render - parent`);
 
     const add = () => {
         setCount(s => s + 1);
     }
 
-    console.log(`[ParentRerender] parent render`);
-
     return (
         <div className={styles.card}>
             <p>Parent: {count}</p>
-            <button onClick={add}>Parent re-rendering</button>
-            <ChildComp />
+            <button onClick={add}>Parent +1</button>
+            <div className={styles.content}>
+                <ChildComp />
+            </div>
         </div>
     )
 }
@@ -24,17 +35,17 @@ const ChildComp = () => {
 
     const [count, setCount] = useState(0);
 
+    console.log(`[ParentRerender] render - child`);
+
     const add = () => {
         setCount(s => s + 1);
     }
 
-    console.log(`[ParentRerender] child render`);
-
     return (
-        <div className={styles.content}>
+        <>
             <p>Child: {count}</p>
-            <button onClick={add}>Child re-rendering</button>
-        </div>
+            <button onClick={add}>Child +1</button>
+        </>
     )
 }
 
